@@ -31,11 +31,6 @@ def navigateToTinderHomepage():
 
 
 if __name__ == '__main__':
-    options = webdriver.ChromeOptions()
-    options.add_argument('C:/Users/Raj/AppData/Local/Google/Chrome/User Data/Default')
-
-    service = Service(r"C:\Program Files\Google\Chrome\Application\chrome.exe")
-
-    driver = webdriver.Chrome(service=service, options=options)
+    driver = webdriver.Chrome()
 
     navigateToTinderHomepage()
