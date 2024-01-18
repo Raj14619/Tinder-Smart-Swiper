@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.chrome.service import Service
 
 
 def navigateToTinderHomepage():
@@ -30,9 +31,11 @@ def navigateToTinderHomepage():
 
 
 if __name__ == '__main__':
-    chrome_options = Options()
-    chrome_options.add_argument('C:/Users/Raj/AppData/Local/Google/Chrome/User Data/Default')
-    driver = webdriver.Chrome(options=chrome_options)
+    options = webdriver.ChromeOptions()
+    options.add_argument('C:/Users/Raj/AppData/Local/Google/Chrome/User Data/Default')
 
-    time.sleep(50)
+    service = Service(r"C:\Program Files\Google\Chrome\Application\chrome.exe")
+
+    driver = webdriver.Chrome(service=service, options=options)
+
     navigateToTinderHomepage()
